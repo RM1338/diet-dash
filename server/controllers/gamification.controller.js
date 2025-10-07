@@ -2,6 +2,7 @@ const Badge = require('../models/Badge');
 const User = require('../models/User');
 const Progress = require('../models/Progress');
 const Game = require('../models/Game');
+const GameScore = require('../models/GameScore');
 
 // Get user's badges (unlocked and locked)
 exports.getUserBadges = async (req, res) => {
@@ -69,6 +70,56 @@ exports.getAllBadges = async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Error fetching badges',
+      error: error.message
+    });
+  }
+};
+
+// Get leaderboard
+exports.getLeaderboard = async (req, res) => {
+  try {
+    const { gameType } = req.query;
+
+    if (gameType && gameType !== 'overall') {
+      // Game-specific leaderboard
+      const gameScores = await GameScore.find({ gameId: gameType })
+        .populate('userId', 'username profile gamification')
+        .sort({ score: -1 })
+        .limit(100);
+
+      return res.json({
+        success: true,
+        data: {
+          leaderboard: gameScores
+        }
+      });
+    }
+
+    // Overall leaderboard - get all users sorted by totalPoints
+    const users = await User.find({ 'gamification.totalPoints': { $gt: 0 } })
+      .select('username profile gamification.totalPoints gamification.level')
+      .sort({ 'gamification.totalPoints': -1 })
+      .limit(100);
+
+    const leaderboard = users.map(user => ({
+      _id: user._id,
+      username: user.username,
+      profile: user.profile,
+      totalPoints: user.gamification.totalPoints,
+      level: user.gamification.level
+    }));
+
+    res.json({
+      success: true,
+      data: {
+        leaderboard
+      }
+    });
+  } catch (error) {
+    console.error('Leaderboard error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error fetching leaderboard',
       error: error.message
     });
   }
