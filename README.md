@@ -18,14 +18,14 @@ encourages collaboration, progress tracking, and healthy competition.
 ## ✨ Key Features
 
 -   🎮 **6 Interactive Nutrition Games** --- Food Sorting, Meal Creator,
-    Nutrition Quiz, Calorie Counter, Vitamin Match, Shopping Spree\
+    Nutrition Quiz, Calorie Counter, Vitamin Match, Shopping Spree
 -   🏆 **Gamification System** --- Points, levels, badges, and
-    leaderboards\
--   👤 **Multi-Role Support** --- Student, Teacher, and Parent accounts\
+    leaderboards
+-   👤 **Multi-Role Support** --- Student, Teacher, and Parent accounts
 -   🌓 **Dark/Light Theme** --- Glassmorphic interface with dynamic
-    theme toggle\
+    theme toggle
 -   📊 **Progress Tracking** --- Real-time statistics and achievement
-    tracking\
+    tracking
 -   🎯 **Personalized Profiles** --- Custom avatars and editable profile
     sections
 
@@ -133,9 +133,9 @@ Then, open <http://localhost:3000> in your browser.
 
 ## 🙏 Acknowledgments
 
--   **Google Cloud** --- Infrastructure and hosting support\
+-   **Google Cloud** --- Infrastructure and hosting support
 -   **Karunya Institute of Technology and Sciences** --- Academic
-    guidance\
+    guidance
 -   **GeeksforGeeks** --- Learning and development resources
 
 ------------------------------------------------------------------------
