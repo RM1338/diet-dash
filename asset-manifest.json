@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/diet-dash/static/css/main.2c89aa05.css",
-    "main.js": "/diet-dash/static/js/main.b06e6752.js",
+    "main.js": "/diet-dash/static/js/main.d6b5e0cc.js",
     "static/js/488.c443cfd7.chunk.js": "/diet-dash/static/js/488.c443cfd7.chunk.js",
     "index.html": "/diet-dash/index.html",
     "main.2c89aa05.css.map": "/diet-dash/static/css/main.2c89aa05.css.map",
-    "main.b06e6752.js.map": "/diet-dash/static/js/main.b06e6752.js.map",
+    "main.d6b5e0cc.js.map": "/diet-dash/static/js/main.d6b5e0cc.js.map",
     "488.c443cfd7.chunk.js.map": "/diet-dash/static/js/488.c443cfd7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c89aa05.css",
-    "static/js/main.b06e6752.js"
+    "static/js/main.d6b5e0cc.js"
   ]
 }
