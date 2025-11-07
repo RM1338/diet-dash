@@ -1,6 +1,21 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+// Get the base URL from environment or determine it automatically
+const getAPIUrl = () => {
+  if (process.env.REACT_APP_API_URL) {
+    return process.env.REACT_APP_API_URL;
+  }
+  
+  // In development
+  if (process.env.NODE_ENV === 'development') {
+    return 'http://localhost:5000/api';
+  }
+  
+  // In production on Vercel, use relative path to same domain
+  return '/api';
+};
+
+const API_URL = getAPIUrl();
 
 // Create axios instance
 const api = axios.create({
@@ -21,12 +36,12 @@ export const authAPI = {
   register: (data) => api.post('/auth/register', data),
   login: (data) => api.post('/auth/login', data),
   getProfile: () => api.get('/auth/profile'),
-  updateProfile: (data) => api.put('/auth/profile', data), // Added update to auth
+  updateProfile: (data) => api.put('/auth/profile', data),
 };
 
 // User API
 export const userAPI = {
-  updateProfile: (data) => api.put('/auth/profile', data), // Changed to auth endpoint
+  updateProfile: (data) => api.put('/auth/profile', data),
   getUser: (userId) => api.get(`/users/${userId}`),
 };
 
