@@ -1,5 +1,6 @@
 {
   "name": "nutriquest-client",
+  "homepage": "https://rm1338.github.io/diet-dash",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
