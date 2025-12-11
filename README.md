@@ -25,7 +25,7 @@
   
 | Dashboard | Nutrition Quiz |
 |:---------:|:---------:|
-| ![Dashboard](./githubAssets/dashboard.png) | ![Quiz](./githubAssets/quiz.png) |
+| ![Dashboard](./githubAssets/leaderboard.png) | ![Quiz](./githubAssets/quiz.png) |
 
 ### Gameplay in Action
 
