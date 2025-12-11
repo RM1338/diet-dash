@@ -23,10 +23,5 @@
       "src": "/(.*)",
       "dest": "/client/build/index.html"
     }
-  ],
-  "env": {
-    "MONGODB_URI": "@mongodb_uri",
-    "CLIENT_URL": "@client_url",
-    "PORT": "3000"
-  }
+  ]
 }
